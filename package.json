@@ -17,7 +17,7 @@
     "watch": "npm run watch --workspaces",
     "publish-all": "npm publish --workspaces --access public",
     "link-all": "npm link --workspaces",
-    "start": "node dist/index.js"
+    "start": "node src/google-maps/dist/index.js"
   },
   "dependencies": {
     "@modelcontextprotocol/server-everything": "*",

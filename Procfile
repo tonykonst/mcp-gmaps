@@ -1,1 +1,1 @@
-web: node dist/index.js 
+web: node src/google-maps/dist/index.js
