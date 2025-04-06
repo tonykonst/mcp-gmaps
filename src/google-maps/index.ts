@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { HttpServerTransport } from "@modelcontextprotocol/sdk/server/http.js";
+import { HttpServerTransport } from "@modelcontextprotocol/sdk/server";
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
