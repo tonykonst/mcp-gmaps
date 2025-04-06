@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-import { Server, HttpServerTransport } from "@modelcontextprotocol/sdk";
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
   Tool,
 } from "@modelcontextprotocol/sdk/types.js";
 import fetch from "node-fetch";
-
 
 // Response interfaces
 interface GoogleMapsResponse {
@@ -667,13 +667,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 });
 
 async function runServer() {
-  const transport = new HttpServerTransport({
-    port: process.env.PORT || 8080,
-    path: "/mcp", // endpoint будет доступен как /mcp
-  });
-
+  const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Google Maps MCP Server running on HTTP /mcp");
+  console.error("Google Maps MCP Server running on stdio");
 }
 
 runServer().catch((error) => {
