@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { HttpServerTransport } from "@modelcontextprotocol/sdk";
+import { Server, HttpServerTransport } from "@modelcontextprotocol/sdk";
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
   Tool,
 } from "@modelcontextprotocol/sdk/types.js";
 import fetch from "node-fetch";
+
 
 // Response interfaces
 interface GoogleMapsResponse {
